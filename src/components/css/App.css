@@ -1,0 +1,38 @@
+:root {
+    --main-color: #FF7396;
+    --card-color: #F4E06D;
+    --text-card-color: #D34829;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    padding: 60px;
+}
+
+body{
+    font-family: "Arial Black";
+}
+
+.card-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+    gap: 1px;
+}
+
+.card-list > .maxCard{
+    margin: 5px;
+}
+
+@media screen and (max-width: 600px) {
+
+    .container{
+        padding: 30px;
+    }
+}

@@ -1,0 +1,17 @@
+.maxCard{
+    background: var(--card-color);
+    border-radius: 15px;
+    max-width: 100%;
+    color: var(--text-card-color);
+    padding: 10px;
+}
+
+.maxCard > .card-title{
+    border-bottom: 2px solid whitesmoke;
+}
+
+@media screen and (max-width: 600px) {
+    .maxCard > .card-title{
+        text-align: center;
+    }
+}
