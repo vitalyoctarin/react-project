@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Service = () => {
+const ItemMenu = () => {
     return (
         <div>
-            This Service
+            
         </div>
     );
 };
 
-export default Service;
+export default ItemMenu;

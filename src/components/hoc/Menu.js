@@ -5,13 +5,19 @@ import axios from "axios"
 const Menu = () => {
 
     const fetchMenuData = () => {
-        axios.get(`https://jsonplaceholder.typicode.com/photos`)
-            .then(res => {
-                res.data.length = 10
-                setMenuItems(res.data)
-            },)
+
+        setTimeout(async () => {
+            await axios.get(`https://jsonplaceholder.typicode.com/photos`)
+                .then(res => {
+                    res.data.length = 5
+                    setMenuItems(res.data)
+                    setLoading(false)
+                })
+        }, 500)
+
     }
 
+    const [loading, setLoading] = useState(true)
     const [menuItems, setMenuItems] = useState([])
 
     useEffect(() => {
@@ -20,12 +26,13 @@ const Menu = () => {
 
     return (
         <div>
-            {
-                menuItems.length != 0
-                    ?
-                        <CardList data={menuItems}/>
-                    :   ""
-            }
+            <CardList data={menuItems} loading={loading}/>
+            {/*{*/}
+            {/*    menuItems.length != 0*/}
+            {/*        ?*/}
+            {/*            <CardList data={menuItems}/>*/}
+            {/*        :   ""*/}
+            {/*}*/}
         </div>
     );
 };
